@@ -1,0 +1,32 @@
+2025-02-01 18:59:32,274 - INFO - Starting the fine-tuning process.
+2025-02-01 18:59:32,274 - INFO - Loading the tokenizer.
+2025-02-01 18:59:32,278 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-02-01 18:59:32,785 - DEBUG - https://huggingface.co:443 "HEAD /microsoft/phi-2/resolve/main/tokenizer_config.json HTTP/11" 200 0
+2025-02-01 18:59:33,169 - INFO - Loading the pre-trained model.
+2025-02-01 18:59:33,343 - DEBUG - https://huggingface.co:443 "HEAD /microsoft/phi-2/resolve/main/config.json HTTP/11" 200 0
+2025-02-01 19:00:18,882 - DEBUG - https://huggingface.co:443 "HEAD /microsoft/phi-2/resolve/main/generation_config.json HTTP/11" 200 0
+2025-02-01 19:00:19,944 - INFO - Starting the training process.
+2025-02-01 19:34:02,818 - INFO - Starting the fine-tuning process.
+2025-02-01 19:34:02,819 - INFO - Loading the tokenizer.
+2025-02-01 19:34:02,823 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-02-01 19:34:03,462 - DEBUG - https://huggingface.co:443 "HEAD /microsoft/phi-2/resolve/main/tokenizer_config.json HTTP/11" 200 0
+2025-02-01 19:34:03,834 - INFO - Loading the pre-trained model.
+2025-02-01 19:34:03,999 - DEBUG - https://huggingface.co:443 "HEAD /microsoft/phi-2/resolve/main/config.json HTTP/11" 200 0
+2025-02-01 19:34:51,821 - DEBUG - https://huggingface.co:443 "HEAD /microsoft/phi-2/resolve/main/generation_config.json HTTP/11" 200 0
+2025-02-01 19:34:52,382 - INFO - Starting the training process.
+2025-02-01 19:50:28,309 - INFO - Starting the fine-tuning process.
+2025-02-01 19:50:28,309 - INFO - Loading the tokenizer.
+2025-02-01 19:50:28,312 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-02-01 19:50:28,699 - DEBUG - https://huggingface.co:443 "HEAD /microsoft/phi-2/resolve/main/tokenizer_config.json HTTP/11" 200 0
+2025-02-01 19:50:29,064 - INFO - Loading the pre-trained model.
+2025-02-01 19:50:29,314 - DEBUG - https://huggingface.co:443 "HEAD /microsoft/phi-2/resolve/main/config.json HTTP/11" 200 0
+2025-02-01 19:50:29,520 - DEBUG - https://huggingface.co:443 "HEAD /microsoft/phi-2/resolve/main/adapter_config.json HTTP/11" 404 0
+2025-02-01 19:51:11,171 - DEBUG - https://huggingface.co:443 "HEAD /microsoft/phi-2/resolve/main/generation_config.json HTTP/11" 200 0
+2025-02-01 19:51:18,998 - INFO - Starting the training process.
+2025-02-01 20:00:23,308 - DEBUG - Resetting dropped connection: huggingface.co
+2025-02-01 20:00:23,855 - DEBUG - https://huggingface.co:443 "HEAD /microsoft/phi-2/resolve/main/config.json HTTP/11" 200 0
+2025-02-01 20:00:24,067 - DEBUG - https://huggingface.co:443 "HEAD /microsoft/phi-2/resolve/main/config.json HTTP/11" 200 0
+2025-02-01 20:00:27,684 - INFO - Saving the fine-tuned model.
+2025-02-01 20:00:27,961 - DEBUG - https://huggingface.co:443 "HEAD /microsoft/phi-2/resolve/main/config.json HTTP/11" 200 0
+2025-02-01 20:00:28,129 - DEBUG - https://huggingface.co:443 "HEAD /microsoft/phi-2/resolve/main/config.json HTTP/11" 200 0
+2025-02-01 20:00:31,290 - INFO - Fine-tuning process completed successfully.

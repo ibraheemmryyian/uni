@@ -1,0 +1,11 @@
+{
+  "name": "customer-support-ai",
+  "version": "1.0.0",
+  "description": "Advanced Customer Support AI System",
+  "main": "run.py",
+  "scripts": {
+    "start": "python3 run.py",
+    "test": "python3 -m pytest tests",
+    "setup": "python3 -c \"from src.utils.environment import setup_python_environment; setup_python_environment()\""
+  }
+}

@@ -1,0 +1,23 @@
+# Core dependencies
+torch
+transformers
+chromadb
+langdetect
+pandas
+matplotlib
+
+# Utilities
+python-dotenv
+tqdm
+numpy
+
+# For sentiment analysis
+bert-tensorflow
+
+# For logging and analysis
+openpyxl
+
+# For API
+fastapi
+uvicorn
+python-multipart

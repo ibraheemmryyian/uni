@@ -1,0 +1,320 @@
+2024-12-14 14:16:14,268 - src.models.response_generator - INFO - User query: i want a payment plan
+2024-12-14 14:16:14,272 - src.models.response_generator - INFO - Generated response: You are a helpful customer support assistant.
+Provide clear and concise responses.
+
+User query: i want a payment plan
+
+Relevant FAQ information:
+- Question: I want a payment plan / I want to pay in installments.
+Answer: {'response': 'Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.', 'tag': 'Payment plan'}
+
+Response:
+
+Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+
+Question: i want a payment plan
+
+Relevant FAQ information:
+- Question: I want a payment plan / I want to pay in installments.
+Answer: {'response': 'Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.', 'tag': 'Payment plan'}
+
+Response:
+
+Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+
+Question: i want a payment plan
+
+Relevant FAQ information:
+- Question: I want
+2024-12-14 14:18:18,105 - src.models.response_generator - INFO - User query: i need more time
+2024-12-14 14:18:18,106 - src.models.response_generator - INFO - Generated response: You are a helpful customer support assistant.
+Provide clear and concise responses.
+
+User query: i need more time
+
+Relevant FAQ information:
+- Question: I want to pay but I need more time.
+Answer: {'response': "Tamara does not extend payment deadlines, so it's crucial to settle your debts as soon as possible to avoid escalation and potential damage to your credit score.", 'tag': 'Time extension'}
+
+Response:
+
+Tamara does not extend payment deadlines, so it's crucial to settle your debts as soon as possible to avoid escalation and potential damage to your credit score.
+
+User query: i need more time
+
+Relevant FAQ information:
+- Question: I want to pay but I need more time.
+Answer: {'response': "Tamara does not extend payment deadlines, so it's crucial to settle your debts as soon as possible to avoid escalation and potential damage to your credit score.", 'tag': 'Time extension'}
+
+Response:
+
+Tamara does not extend payment deadlines, so it's crucial to settle your debts as soon as possible to avoid escalation and potential damage to your credit score.
+
+User
+2024-12-14 14:36:20,988 - src.models.response_generator - INFO - User query: i want a payment plan
+2024-12-14 14:36:20,990 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 14:36:26,523 - src.models.response_generator - INFO - User query: i need more time
+2024-12-14 14:36:26,523 - src.models.response_generator - INFO - Generated response: Tamara does not extend payment deadlines, so it's crucial to settle your debts as soon as possible to avoid escalation and potential damage to your credit score.
+2024-12-14 14:36:55,710 - src.models.response_generator - INFO - User query: how can i pay
+2024-12-14 14:36:55,710 - src.models.response_generator - INFO - Generated response: Payments are accepted through UAE-issued debit or credit cards via the Tamara portal, available through their website and mobile app.
+2024-12-14 14:37:06,200 - src.models.response_generator - INFO - User query: who is cleargrid
+2024-12-14 14:37:06,201 - src.models.response_generator - INFO - Generated response: ClearGrid only accepts payments through UAE-issued debit or credit cards via the Tamara portal. We do not accept other payment methods.
+2024-12-14 14:38:18,534 - src.models.response_generator - INFO - User query: why is cleargrid communicating with me
+2024-12-14 14:38:18,534 - src.models.response_generator - INFO - Generated response: Please note that there is an account registered under your name and number with an outstanding balance that must be resolved.
+2024-12-14 14:38:24,486 - src.models.response_generator - INFO - User query: i dont want to pay
+2024-12-14 14:38:24,486 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 14:40:08,846 - src.models.response_generator - INFO - User query: blabla bla bla bla boohooo boo
+2024-12-14 14:40:08,846 - src.models.response_generator - INFO - Generated response: Our office is located in Dubai, but we do not accept walk-ins. Please contact us for assistance via email or WhatsApp.
+2024-12-14 14:40:14,381 - src.models.response_generator - INFO - User query: fucking hell
+2024-12-14 14:40:14,382 - src.models.response_generator - INFO - Generated response: This debt is registered to your name. If you believe it’s not yours, we recommend contacting {Lender} and, if necessary, reporting to the police. Note that if you allowed someone to use your information, the debt is still legally your responsibility.
+2024-12-14 14:44:40,215 - src.models.response_generator - INFO - User query: goodmorning
+2024-12-14 14:44:40,215 - src.models.response_generator - INFO - Generated response: You can view your debts by logging into the ClearGrid portal. For payment, visit the Tamara website or use their mobile app.
+2024-12-14 14:44:50,992 - src.models.response_generator - INFO - User query: i dont want to pay
+2024-12-14 14:44:50,992 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 14:44:53,325 - src.models.response_generator - INFO - User query: im bored
+2024-12-14 14:44:53,325 - src.models.response_generator - INFO - Generated response: It seems you might be logged into a different account. Verify the number registered to your account: {Registered Number}.
+2024-12-14 14:45:03,220 - src.models.response_generator - INFO - User query: weirdo
+2024-12-14 14:45:03,220 - src.models.response_generator - INFO - Generated response: Our office is located in Dubai, but we do not accept walk-ins. Please contact us for assistance via email or WhatsApp.
+2024-12-14 14:45:09,288 - src.models.response_generator - INFO - User query: where are you
+2024-12-14 14:45:09,288 - src.models.response_generator - INFO - Generated response: For assistance, please contact Tamara support at 600 5 TAMAR (600582627) or 045425100. You can also email them at support@tamara.com or visit their support page for more help: https://support.tamara.co/hc/en-us.
+2024-12-14 14:45:13,395 - src.models.response_generator - INFO - User query: who are you
+2024-12-14 14:45:13,395 - src.models.response_generator - INFO - Generated response: This debt is registered to your name. If you believe it’s not yours, we recommend contacting {Lender} and, if necessary, reporting to the police. Note that if you allowed someone to use your information, the debt is still legally your responsibility.
+2024-12-14 14:45:18,028 - src.models.response_generator - INFO - User query: i dont want to pay
+2024-12-14 14:45:18,028 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 14:45:46,855 - src.models.response_generator - INFO - User query: alsalamu alaikom
+2024-12-14 14:45:46,855 - src.models.response_generator - INFO - Generated response: We understand your decision, but please be aware that non-payment can lead to legal action in the UAE, affecting your financial standing and opportunities. We strongly advise resolving your balance promptly.
+2024-12-14 14:45:55,217 - src.models.response_generator - INFO - User query: ahlan m3alem
+2024-12-14 14:45:55,217 - src.models.response_generator - INFO - Generated response: We understand your decision, but please be aware that non-payment can lead to legal action in the UAE, affecting your financial standing and opportunities. We strongly advise resolving your balance promptly.
+2024-12-14 14:56:37,213 - src.models.response_generator - INFO - User query: i want a payment plan
+2024-12-14 14:56:37,634 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 14:56:53,972 - src.models.response_generator - INFO - User query: i cant pay
+2024-12-14 14:56:54,076 - src.models.response_generator - ERROR - Error generating response: probability tensor contains either `inf`, `nan` or element < 0
+2024-12-14 14:56:54,077 - src.models.response_generator - ERROR - Traceback (most recent call last):
+  File "C:\Users\amrey\Desktop\bolt multi file\venv\src\models\response_generator.py", line 42, in generate_response
+    action, action_prob = self.ppo_agent.select_action(state)
+  File "C:\Users\amrey\Desktop\bolt multi file\venv\src\models\rl\ppo_agent.py", line 37, in select_action
+    action = torch.multinomial(probs, 1).item()
+RuntimeError: probability tensor contains either `inf`, `nan` or element < 0
+
+2024-12-14 14:56:58,616 - src.models.response_generator - INFO - User query: i want more time
+2024-12-14 14:56:58,680 - src.models.response_generator - ERROR - Error generating response: probability tensor contains either `inf`, `nan` or element < 0
+2024-12-14 14:56:58,681 - src.models.response_generator - ERROR - Traceback (most recent call last):
+  File "C:\Users\amrey\Desktop\bolt multi file\venv\src\models\response_generator.py", line 42, in generate_response
+    action, action_prob = self.ppo_agent.select_action(state)
+  File "C:\Users\amrey\Desktop\bolt multi file\venv\src\models\rl\ppo_agent.py", line 37, in select_action
+    action = torch.multinomial(probs, 1).item()
+RuntimeError: probability tensor contains either `inf`, `nan` or element < 0
+
+2024-12-14 15:02:37,198 - src.models.response_generator - INFO - Processing query: i cant pay it all
+2024-12-14 15:02:37,509 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 15:03:21,024 - src.models.response_generator - INFO - Processing query: i cant pay
+2024-12-14 15:03:21,224 - src.models.response_generator - INFO - Generated response: For assistance, contact Tamara at 600 5 TAMAR (600582627) or 045425100, or visit their support page: https://support.tamara.co/hc/en-us.
+2024-12-14 15:03:36,668 - src.models.response_generator - INFO - Processing query: i dont want to pay
+2024-12-14 15:03:36,866 - src.models.response_generator - INFO - Generated response: Please note that there is an account registered under your name and number with an outstanding balance that must be resolved.
+2024-12-14 15:04:16,720 - src.models.response_generator - INFO - Processing query: i want to pay in installments
+2024-12-14 15:04:16,895 - src.models.response_generator - INFO - Generated response: Your total outstanding balance is {outstanding balance} AED. ClearGrid does not manage fees, please contact Tamara for any fee-related inquiries.
+2024-12-14 15:04:25,505 - src.models.response_generator - INFO - Processing query: i cant pay in full
+2024-12-14 15:04:25,719 - src.models.response_generator - INFO - Generated response: Contact Tamara Customer Support:
+Email Support: support@tamara.com
+Phone Support: 600 5 TAMARA (600582627) or 045425100
+Online Support: Visit Tamara Support for more help: https://support.tamara.co/hc/en-us.
+2024-12-14 15:04:45,514 - src.models.response_generator - INFO - Processing query: i will pay at the end of the month
+2024-12-14 15:04:45,719 - src.models.response_generator - INFO - Generated response: Contact Tamara Customer Support:
+Email Support: support@tamara.com
+Phone Support: 600 5 TAMARA (600582627) or 045425100
+Online Support: Visit Tamara Support for more help: https://support.tamara.co/hc/en-us.
+2024-12-14 15:05:02,954 - src.models.response_generator - INFO - Processing query: give me more time
+2024-12-14 15:05:03,147 - src.models.response_generator - INFO - Generated response: For assistance, please contact Tamara support at 600 5 TAMAR (600582627) or 045425100. You can also email them at support@tamara.com or visit their support page for more help: https://support.tamara.co/hc/en-us.
+2024-12-14 15:05:13,548 - src.models.response_generator - INFO - Processing query: i lost my job i cant pay
+2024-12-14 15:05:13,733 - src.models.response_generator - INFO - Generated response: Thank you for confirming. Please allow 48 hours for the payment to reflect. If the balance isn’t updated after that period, feel free to contact us.
+2024-12-14 17:06:33,152 - src.models.response_generator - INFO - Processing query: i cant pay
+2024-12-14 17:06:33,580 - src.models.response_generator - INFO - Generated response: Contact Tamara Customer Support:
+Email Support: support@tamara.com
+Phone Support: 600 5 TAMARA (600582627) or 045425100
+Online Support: Visit Tamara Support for more help: https://support.tamara.co/hc/en-us.
+2024-12-14 17:06:46,539 - src.models.response_generator - INFO - Processing query: can you call me
+2024-12-14 17:06:46,735 - src.models.response_generator - INFO - Generated response: ClearGrid only accepts payments through UAE-issued debit or credit cards via the Tamara portal. We do not accept other payment methods.
+2024-12-14 17:06:53,392 - src.models.response_generator - INFO - Processing query: i dont want to pay
+2024-12-14 17:06:53,610 - src.models.response_generator - INFO - Generated response: We understand the situation, but unfortunately, Tamara does not offer extensions or payment plans. Please make the payment as soon as possible. We strongly recommend addressing this matter promptly.
+2024-12-14 17:06:58,009 - src.models.response_generator - INFO - Processing query: -1
+2024-12-14 17:06:58,186 - src.models.response_generator - INFO - Generated response: We cannot make outbound calls, but you can reach us at any time via email at support@cleargrid.co or chat with us on WhatsApp at +971 58 149 9047.
+2024-12-14 17:07:05,413 - src.models.response_generator - INFO - Processing query: can you contact me
+2024-12-14 17:07:05,616 - src.models.response_generator - INFO - Generated response: You can view your debts by logging into the ClearGrid portal. For payment, visit the Tamara website or use their mobile app.
+2024-12-14 17:07:11,421 - src.models.response_generator - INFO - Processing query: where are my debt
+2024-12-14 17:07:11,601 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 17:07:18,156 - src.models.response_generator - INFO - Processing query: what is cleargrid
+2024-12-14 17:07:18,323 - src.models.response_generator - INFO - Generated response: Send the customer {reference ID}.
+2024-12-14 17:10:52,572 - src.models.response_generator - INFO - Processing query: i will pay just wait for me
+2024-12-14 17:10:52,762 - src.models.response_generator - INFO - Generated response: Tamara does not allow rescheduling of payments. We recommend settling your outstanding balance as soon as possible through the Tamara portal.
+2024-12-14 17:11:10,005 - src.models.response_generator - INFO - Processing query: i havent recieved my salary i cant pay
+2024-12-14 17:11:10,218 - src.models.response_generator - INFO - Generated response: I'm truly sorry to hear about your situation. Unfortunately, Tamara cannot offer payment plans or time extensions. We recommend resolving the balance as soon as possible to avoid further complications.
+2024-12-14 17:14:52,915 - src.models.response_generator - INFO - Processing query: gosngd]gfsa
+2024-12-14 17:14:53,082 - src.models.response_generator - INFO - Generated response: ClearGrid only accepts payments through UAE-issued debit or credit cards via the Tamara portal. We do not accept other payment methods.
+2024-12-14 17:14:54,809 - src.models.response_generator - INFO - Processing query: bfafnbsafn
+2024-12-14 17:14:55,021 - src.models.response_generator - INFO - Generated response: We understand that you have faced delays, but please be aware that Tamara does not offer time extensions for overdue payments. Any further delays in settling your account will only lead to complications and potential legal action. It's crucial to address your balance immediately.
+2024-12-14 17:14:55,687 - src.models.response_generator - INFO - Processing query: asanbfsdafmsa
+2024-12-14 17:14:55,890 - src.models.response_generator - INFO - Generated response: For assistance, please contact Tamara support at 600 5 TAMAR (600582627) or 045425100. You can also email them at support@tamara.com or visit their support page for more help: https://support.tamara.co/hc/en-us.
+2024-12-14 17:14:56,687 - src.models.response_generator - INFO - Processing query: nfsajfa
+2024-12-14 17:14:56,876 - src.models.response_generator - INFO - Generated response: We understand that it can sometimes be challenging to meet deadlines, but we do not offer extensions. Please arrange to make the full payment promptly. If you need any help, feel free to contact us directly.
+2024-12-14 17:14:57,526 - src.models.response_generator - INFO - Processing query: nfe3
+2024-12-14 17:14:57,692 - src.models.response_generator - INFO - Generated response: We cannot confirm if you will be able to use Tamara again after settling your debt. Please contact Tamara support to discuss your options.
+2024-12-14 17:14:58,529 - src.models.response_generator - INFO - Processing query: afn ajuei
+2024-12-14 17:14:58,715 - src.models.response_generator - INFO - Generated response: I'm truly sorry to hear about your situation. Unfortunately, Tamara cannot offer payment plans or time extensions. We recommend resolving the balance as soon as possible to avoid further complications.
+2024-12-14 17:15:01,421 - src.models.response_generator - INFO - Processing query: watermelon
+2024-12-14 17:15:01,606 - src.models.response_generator - INFO - Generated response: To update your contact number, please reach out to Tamara support at 600 5 TAMAR (600582627) or 045425100. Their team will assist you promptly.
+2024-12-14 17:15:07,645 - src.models.response_generator - INFO - Processing query: nigger
+2024-12-14 17:15:07,835 - src.models.response_generator - INFO - Generated response: We understand that things can be tough, but we need the payment to be made as soon as possible. Unfortunately, we don't offer time extensions. Please arrange to pay when you are able to. If you need any further assistance, don't hesitate to contact us.
+2024-12-14 17:15:13,365 - src.models.response_generator - INFO - Processing query: niger
+2024-12-14 17:15:13,531 - src.models.response_generator - INFO - Generated response: Our office is located in Dubai, but we do not accept walk-ins. Please contact us for assistance via email or WhatsApp.
+2024-12-14 17:15:15,933 - src.models.response_generator - INFO - Processing query: dubai
+2024-12-14 17:15:16,122 - src.models.response_generator - INFO - Generated response: We understand that things can be tough, but we need the payment to be made as soon as possible. Unfortunately, we don't offer time extensions. Please arrange to pay when you are able to. If you need any further assistance, don't hesitate to contact us.
+2024-12-14 17:15:18,380 - src.models.response_generator - INFO - Processing query: bye
+2024-12-14 17:15:18,562 - src.models.response_generator - INFO - Generated response: Thank you for confirming. Please allow 48 hours for the payment to reflect. If the balance isn't updated after that period, feel free to contact us.
+2024-12-14 17:15:20,492 - src.models.response_generator - INFO - Processing query: fart
+2024-12-14 17:15:20,660 - src.models.response_generator - INFO - Generated response: Tamara does not extend payment deadlines, so it's crucial to settle your debts as soon as possible to avoid escalation and potential damage to your credit score.
+2024-12-14 17:15:22,370 - src.models.response_generator - INFO - Processing query: pay
+2024-12-14 17:15:22,510 - src.models.response_generator - INFO - Generated response: Send the customer {reference ID}.
+2024-12-14 17:15:24,539 - src.models.response_generator - INFO - Processing query: cant pay
+2024-12-14 17:15:24,715 - src.models.response_generator - INFO - Generated response: For assistance, contact Tamara at 600 5 TAMAR (600582627) or 045425100, or visit their support page: https://support.tamara.co/hc/en-us.
+2024-12-14 17:15:29,389 - src.models.response_generator - INFO - Processing query: i travel
+2024-12-14 17:15:29,556 - src.models.response_generator - INFO - Generated response: Thank you for confirming. Please allow 48 hours for the payment to reflect. If the balance isn't updated after that period, feel free to contact us.
+2024-12-14 17:15:34,140 - src.models.response_generator - INFO - Processing query: i kill myse;f
+2024-12-14 17:15:34,331 - src.models.response_generator - INFO - Generated response: Payments are accepted through UAE-issued debit or credit cards via the Tamara portal, available through their website and mobile app.
+2024-12-14 17:15:37,174 - src.models.response_generator - INFO - Processing query: ahhashdahdas
+2024-12-14 17:15:37,389 - src.models.response_generator - INFO - Generated response: For assistance, contact Tamara at 600 5 TAMAR (600582627) or 045425100, or visit their support page: https://support.tamara.co/hc/en-us.
+2024-12-14 17:15:37,861 - src.models.response_generator - INFO - Processing query: dfhbafjas
+2024-12-14 17:15:38,068 - src.models.response_generator - INFO - Generated response: To access your Tamara account, contact Tamara support at 600 5 TAMAR (600582627) or 045425100. You can also visit: https://support.tamara.co/hc/en-us.
+2024-12-14 17:15:38,540 - src.models.response_generator - INFO - Processing query: fashjfsahfa
+2024-12-14 17:15:38,725 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 17:15:39,003 - src.models.response_generator - INFO - Processing query: fsajfsa
+2024-12-14 17:15:39,187 - src.models.response_generator - INFO - Generated response: Tamara does not offer settlements or discounts on overdue debts. Please settle your outstanding balance as soon as possible to avoid further issues.
+2024-12-14 17:15:39,385 - src.models.response_generator - INFO - Processing query: fjsaf
+2024-12-14 17:15:39,556 - src.models.response_generator - INFO - Generated response: For assistance, contact Tamara at 600 5 TAMAR (600582627) or 045425100, or visit their support page: https://support.tamara.co/hc/en-us.
+2024-12-14 17:15:39,743 - src.models.response_generator - INFO - Processing query: afjas
+2024-12-14 17:15:39,890 - src.models.response_generator - INFO - Generated response: We understand the situation, but unfortunately, Tamara does not offer extensions or payment plans. Please make the payment as soon as possible. We strongly recommend addressing this matter promptly.
+2024-12-14 17:15:40,076 - src.models.response_generator - INFO - Processing query: fjas
+2024-12-14 17:15:40,219 - src.models.response_generator - INFO - Generated response: I'm truly sorry to hear about your situation. Unfortunately, Tamara cannot offer payment plans or time extensions. We recommend resolving the balance as soon as possible to avoid further complications.
+2024-12-14 17:15:41,212 - src.models.response_generator - INFO - Processing query: fsjfajfajfje
+2024-12-14 17:15:41,444 - src.models.response_generator - INFO - Generated response: We understand that you have faced delays, but please be aware that Tamara does not offer time extensions for overdue payments. Any further delays in settling your account will only lead to complications and potential legal action. It's crucial to address your balance immediately.
+2024-12-14 17:15:42,076 - src.models.response_generator - INFO - Processing query: jerjr
+2024-12-14 17:15:42,277 - src.models.response_generator - INFO - Generated response: We understand that it can sometimes be challenging to meet deadlines, but we do not offer extensions. Please arrange to make the full payment promptly. If you need any help, feel free to contact us directly.
+2024-12-14 17:15:42,810 - src.models.response_generator - INFO - Processing query: aujjfe
+2024-12-14 17:15:43,008 - src.models.response_generator - INFO - Generated response: We understand that you have faced delays, but please be aware that Tamara does not offer time extensions for overdue payments. Any further delays in settling your account will only lead to complications and potential legal action. It's crucial to address your balance immediately.
+2024-12-14 17:15:43,950 - src.models.response_generator - INFO - Processing query: iuarmsanfeh
+2024-12-14 17:15:44,144 - src.models.response_generator - INFO - Generated response: Fees are determined by Tamara, not ClearGrid. We cannot add or remove fees. Please contact Tamara for any fee-related questions.
+2024-12-14 17:15:45,648 - src.models.response_generator - INFO - Processing query: aufdiaksfmenjaujhfu
+2024-12-14 17:15:45,865 - src.models.response_generator - INFO - Generated response: We understand that situations can be difficult, but unfortunately, we do not offer payment plans or time extensions. Payment needs to be made in full as soon as possible. If you need any assistance, please don't hesitate to reach out to us.
+2024-12-14 17:17:10,547 - src.models.response_generator - INFO - Processing query: resetexit
+2024-12-14 17:17:10,743 - src.models.response_generator - INFO - Generated response: To access your Tamara account, contact Tamara support at 600 5 TAMAR (600582627) or 045425100. You can also visit: https://support.tamara.co/hc/en-us.
+2024-12-14 17:17:24,251 - src.models.response_generator - INFO - Processing query: ma bdi adfa3
+2024-12-14 17:17:24,445 - src.models.response_generator - INFO - Generated response: We cannot confirm if you will be able to use Tamara again after settling your debt. Please contact Tamara support to discuss your options.
+2024-12-14 17:17:34,014 - src.models.response_generator - INFO - Processing query: dummy
+2024-12-14 17:17:34,182 - src.models.response_generator - INFO - Generated response: While we understand your intention, Tamara does not allow time extensions for overdue payments. Please address your balance as soon as possible to avoid further complications.
+2024-12-14 17:28:47,667 - src.models.response_generator - INFO - Processing query: i want a payment plan
+2024-12-14 17:28:47,668 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 17:29:17,269 - src.models.response_generator - INFO - Processing query: i cant pay without a payment plan
+2024-12-14 17:29:17,269 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 17:29:22,907 - src.models.response_generator - INFO - Processing query: i need a payment plan
+2024-12-14 17:29:22,907 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 17:29:34,178 - src.models.response_generator - INFO - Processing query: the only way for me to pay is if i get a payment plan
+2024-12-14 17:29:34,178 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 17:29:42,922 - src.models.response_generator - INFO - Processing query: BLABALBALABBLA payment plan
+2024-12-14 17:29:42,922 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 17:29:49,157 - src.models.response_generator - INFO - Processing query: BAKFAHFSAFHASJFHASHFJASHFJAH time extension
+2024-12-14 17:29:49,461 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 17:29:57,497 - src.models.response_generator - INFO - Processing query: GHFSADGF{SAFHGSGFHSAFBGH time extension hdasjufha'
+2024-12-14 17:29:57,689 - src.models.response_generator - INFO - Generated response: Send the customer {reference ID}.
+2024-12-14 17:35:08,343 - src.models.response_generator - INFO - Processing query: i ghdhh payment plan
+2024-12-14 17:35:08,343 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 17:35:18,750 - src.models.response_generator - INFO - Processing query: i bla bla bla bla payment plan bla bla bla
+2024-12-14 17:35:18,750 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 17:35:29,903 - src.models.response_generator - INFO - Processing query: i farted and time extension farty face
+2024-12-14 17:35:30,206 - src.models.response_generator - INFO - Generated response: We understand that you have faced delays, but please be aware that Tamara does not offer time extensions for overdue payments. Any further delays in settling your account will only lead to complications and potential legal action. It's crucial to address your balance immediately.
+2024-12-14 17:35:44,734 - src.models.response_generator - INFO - Processing query: i need more time to finish eating my sandwich
+2024-12-14 17:35:44,734 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 17:37:44,518 - src.models.response_generator - INFO - Processing query: i want to change my phone number because my payment plan doesnt work
+2024-12-14 17:37:44,518 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 17:37:53,207 - src.models.response_generator - INFO - Processing query: i want to change my phone number
+2024-12-14 17:37:53,388 - src.models.response_generator - INFO - Generated response: While we understand your intention, Tamara does not allow time extensions for overdue payments. Please address your balance as soon as possible to avoid further complications.
+2024-12-14 17:38:00,591 - src.models.response_generator - INFO - Processing query: i cant access my account
+2024-12-14 17:38:00,813 - src.models.response_generator - INFO - Generated response: This debt is registered to your name. If you believe it's not yours, we recommend contacting {Lender} and, if necessary, reporting to the police. Note that if you allowed someone to use your information, the debt is still legally your responsibility.
+2024-12-14 17:38:05,778 - src.models.response_generator - INFO - Processing query: i cant login
+2024-12-14 17:38:05,974 - src.models.response_generator - INFO - Generated response: Thank you for confirming. Please allow 48 hours for the payment to reflect. If the balance isn't updated after that period, feel free to contact us.
+2024-12-14 18:15:31,242 - src.models.response_generator - INFO - Processing query: paid
+2024-12-14 18:15:31,424 - src.models.response_generator - INFO - Generated response: Thank you for confirming. Please allow 48 hours for the payment to reflect. If the balance isn't updated after that period, feel free to contact us.
+2024-12-14 18:17:07,601 - src.models.response_generator - INFO - Processing query: bye
+2024-12-14 18:17:07,786 - src.models.response_generator - INFO - Generated response: Tamara does not extend payment deadlines, so it's crucial to settle your debts as soon as possible to avoid escalation and potential damage to your credit score.
+2024-12-14 18:59:55,933 - src.models.response_generator - INFO - Processing query: dad
+2024-12-14 18:59:56,230 - src.models.response_generator - INFO - Generated response: We understand the situation, but unfortunately, Tamara does not offer extensions or payment plans. Please make the payment as soon as possible. We strongly recommend addressing this matter promptly.
+2024-12-14 19:00:04,139 - src.models.response_generator - INFO - Processing query: my dad passed away
+2024-12-14 19:00:04,333 - src.models.response_generator - INFO - Generated response: I'm truly sorry to hear about your situation. Unfortunately, Tamara cannot offer payment plans or time extensions. We recommend resolving the balance as soon as possible to avoid further complications.
+2024-12-14 19:00:11,760 - src.models.response_generator - INFO - Processing query: i died
+2024-12-14 19:00:11,940 - src.models.response_generator - INFO - Generated response: You can view your debts by logging into the ClearGrid portal. For payment, visit the Tamara website or use their mobile app.
+2024-12-14 19:51:54,418 - src.models.response_generator - INFO - Processing query: i want a payment plan
+2024-12-14 19:51:54,419 - src.models.response_generator - INFO - Generated response: Tamara does not offer payment plans or time extensions for overdue accounts. Please settle your debt promptly to avoid escalation.
+2024-12-14 20:18:49,716 - src.models.response_generator - INFO - Processing query: jump off a bridge
+2024-12-14 20:18:50,041 - src.models.response_generator - INFO - Generated response: To update your contact number, please reach out to Tamara support at 600 5 TAMAR (600582627) or 045425100. Their team will assist you promptly.
+2024-12-14 20:19:05,510 - src.models.response_generator - INFO - Processing query: i am not in the uae how can i pay
+2024-12-14 20:19:05,711 - src.models.response_generator - INFO - Generated response: Tamara does not offer settlements or discounts on overdue debts. Please settle your outstanding balance as soon as possible to avoid further issues.
+2024-12-14 20:19:12,033 - src.models.response_generator - INFO - Processing query: im not in the uae
+2024-12-14 20:19:12,224 - src.models.response_generator - INFO - Generated response: It seems you might be logged into a different account. Verify the number registered to your account: {Registered Number}.
+2024-12-14 20:19:19,461 - src.models.response_generator - INFO - Processing query: i travelled
+2024-12-14 20:19:19,608 - src.models.response_generator - INFO - Generated response: Send the customer {reference ID}.
+2024-12-14 20:19:24,814 - src.models.response_generator - INFO - Processing query: weirdoo
+2024-12-14 20:19:24,978 - src.models.response_generator - INFO - Generated response: Tamara does not offer settlements or discounts on overdue debts. Please settle your outstanding balance as soon as possible to avoid further issues.
+2024-12-14 20:19:27,861 - src.models.response_generator - INFO - Processing query: huhh
+2024-12-14 20:19:28,253 - src.models.response_generator - INFO - Generated response: We understand that situations can be difficult, but unfortunately, we do not offer payment plans or time extensions. Payment needs to be made in full as soon as possible. If you need any assistance, please don't hesitate to reach out to us.
+2024-12-14 20:19:31,346 - src.models.response_generator - INFO - Processing query: -1
+2024-12-14 20:19:31,537 - src.models.response_generator - INFO - Generated response: To access your Tamara account, contact Tamara support at 600 5 TAMAR (600582627) or 045425100. You can also visit: https://support.tamara.co/hc/en-us.
+2024-12-14 20:19:35,564 - src.models.response_generator - INFO - Processing query: call me
+2024-12-14 20:19:35,744 - src.models.response_generator - INFO - Generated response: Tamara does not allow rescheduling of payments. We recommend settling your outstanding balance as soon as possible through the Tamara portal.
+2024-12-14 20:19:41,647 - src.models.response_generator - INFO - Processing query: pay later
+2024-12-14 20:19:41,832 - src.models.response_generator - INFO - Generated response: We cannot confirm if you will be able to use Tamara again after settling your debt. Please contact Tamara support to discuss your options.
+2024-12-15 13:19:26,206 - src.models.faq_database - ERROR - Error setting up FAQ database: Torch not compiled with CUDA enabled
+2024-12-15 13:24:19,978 - src.models.faq_database - ERROR - Error setting up FAQ database: Torch not compiled with CUDA enabled
+2024-12-15 13:32:27,984 - src.models.faq_database - ERROR - Error setting up FAQ database: Torch not compiled with CUDA enabled
+2024-12-15 13:44:26,232 - src.models.faq_database - ERROR - Error setting up FAQ database: Torch not compiled with CUDA enabled
+2024-12-15 13:45:34,272 - src.models.faq_database - ERROR - Error setting up FAQ database: Torch not compiled with CUDA enabled
+2024-12-15 13:52:15,159 - src.models.faq_database - ERROR - Error setting up FAQ database: Torch not compiled with CUDA enabled
+2024-12-15 13:58:30,245 - src.models.faq_database - ERROR - Error setting up FAQ database: Torch not compiled with CUDA enabled
+2024-12-15 14:05:01,453 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-15 14:07:40,151 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-15 14:07:43,973 - src.models.response_generator - ERROR - Error generating response: Collection.query() got an unexpected keyword argument 'score_threshold'
+2024-12-15 14:07:52,298 - src.models.response_generator - ERROR - Error generating response: Collection.query() got an unexpected keyword argument 'score_threshold'
+2024-12-15 14:07:58,492 - src.models.response_generator - ERROR - Error generating response: Collection.query() got an unexpected keyword argument 'score_threshold'
+2024-12-15 14:08:00,047 - src.models.response_generator - ERROR - Error generating response: Collection.query() got an unexpected keyword argument 'score_threshold'
+2024-12-15 14:08:00,865 - src.models.response_generator - ERROR - Error generating response: Collection.query() got an unexpected keyword argument 'score_threshold'
+2024-12-15 14:08:05,912 - src.models.response_generator - ERROR - Error generating response: Collection.query() got an unexpected keyword argument 'score_threshold'
+2024-12-15 14:08:36,897 - src.models.response_generator - ERROR - Error generating response: Collection.query() got an unexpected keyword argument 'score_threshold'
+2024-12-15 14:08:54,187 - src.models.response_generator - ERROR - Error generating response: Collection.query() got an unexpected keyword argument 'score_threshold'
+2024-12-15 14:09:06,308 - src.models.response_generator - ERROR - Error generating response: Collection.query() got an unexpected keyword argument 'score_threshold'
+2024-12-15 14:12:55,670 - src.models.response_generator - ERROR - Error generating response: Collection.query() got an unexpected keyword argument 'score_threshold'
+2024-12-15 14:12:57,678 - src.models.response_generator - ERROR - Error generating response: Collection.query() got an unexpected keyword argument 'score_threshold'
+2024-12-15 14:37:34,706 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-15 15:38:04,845 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-15 15:44:07,784 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-15 15:56:34,380 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-15 16:19:13,986 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-15 16:22:40,230 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-15 18:22:58,093 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-15 18:45:48,032 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-15 18:49:47,467 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-15 19:26:14,113 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-15 20:33:15,533 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-15 23:14:13,597 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-19 21:51:16,236 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-19 22:56:00,215 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-19 22:58:30,547 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-19 22:59:57,129 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-19 23:02:20,732 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-19 23:05:26,614 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-19 23:10:14,412 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-19 23:12:21,854 - src.models.faq_database - INFO - FAQ database initialized successfully
+2024-12-21 12:19:53,647 - src.models.faq_database - INFO - FAQ database initialized successfully
+2025-01-23 22:18:47,215 - src.models.faq_database - INFO - FAQ database initialized successfully
+2025-01-23 22:27:15,302 - src.models.faq_database - INFO - FAQ database initialized successfully
+2025-01-23 22:31:23,134 - src.models.faq_database - INFO - FAQ database initialized successfully
+2025-01-23 22:34:11,466 - src.models.faq_database - INFO - FAQ database initialized successfully
+2025-01-23 22:35:11,883 - src.models.faq_database - INFO - FAQ database initialized successfully
+2025-01-23 22:44:06,983 - src.models.faq_database - INFO - FAQ database initialized successfully
+2025-01-23 22:46:08,557 - src.models.faq_database - INFO - FAQ database initialized successfully

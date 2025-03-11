@@ -1,0 +1,80 @@
+2025-01-24 00:00:54,099 - src.models.response_generator - INFO - Model initialized successfully!
+2025-01-24 00:01:06,898 - src.models.response_generator - ERROR - Error generating response: 'FAQDatabase' object has no attribute 'similarity_search'
+2025-01-24 00:08:30,412 - src.models.response_generator - INFO - Model initialized successfully!
+2025-01-24 00:08:53,165 - src.models.response_generator - ERROR - Error generating response: 'dict' object has no attribute 'page_content'
+2025-01-24 00:14:40,932 - src.models.response_generator - INFO - Model initialized successfully!
+2025-01-24 00:14:57,601 - src.models.response_generator - ERROR - Error generating response: 'list' object has no attribute 'items'
+2025-01-24 00:18:00,142 - src.models.response_generator - INFO - Model initialized successfully!
+2025-01-24 00:34:19,882 - src.models.response_generator - ERROR - Error initializing model: 
+LlamaTokenizer requires the SentencePiece library but it was not found in your environment. Checkout the instructions on the
+installation page of its repo: https://github.com/google/sentencepiece#installation and follow the ones
+that match your environment. Please note that you may need to restart your runtime after installation.
+
+2025-01-24 00:43:29,732 - src.models.response_generator - INFO - Initializing meta-llama/Llama-2-7b-hf...
+2025-01-24 00:43:29,733 - src.models.response_generator - ERROR - Error initializing model: 
+LlamaTokenizer requires the SentencePiece library but it was not found in your environment. Checkout the instructions on the
+installation page of its repo: https://github.com/google/sentencepiece#installation and follow the ones
+that match your environment. Please note that you may need to restart your runtime after installation.
+
+2025-01-24 00:44:40,641 - src.models.response_generator - INFO - Initializing meta-llama/Llama-2-7b-hf...
+2025-01-24 00:44:42,009 - src.models.response_generator - ERROR - Error initializing model: Can't load tokenizer for 'meta-llama/Llama-2-7b-hf'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'meta-llama/Llama-2-7b-hf' is the correct path to a directory containing all relevant files for a LlamaTokenizer tokenizer.
+2025-01-24 00:48:54,195 - src.models.response_generator - INFO - Model initialized successfully!
+2025-01-24 00:48:57,100 - src.models.response_generator - ERROR - Error generating response: Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+2025-01-24 01:07:14,464 - src.models.response_generator - INFO - Model initialized successfully!
+2025-01-24 01:31:28,674 - src.models.response_generator - INFO - Model initialized successfully!
+2025-01-30 18:04:12,666 - src.models.response_generator - INFO - Model initialized successfully!
+2025-01-30 18:27:57,842 - src.models.response_generator - ERROR - Error initializing model: your-username/phi-2 is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-01-30 18:41:30,812 - src.models.response_generator - INFO - Model initialized successfully!
+2025-01-30 18:41:36,778 - src.models.response_generator - ERROR - Error generating response: Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+2025-01-30 18:41:44,865 - src.models.response_generator - ERROR - Error generating response: Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+2025-01-30 18:41:47,743 - src.models.response_generator - ERROR - Error generating response: Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+2025-01-30 18:44:26,682 - src.models.response_generator - INFO - Model initialized successfully!
+2025-01-30 18:44:54,147 - src.models.response_generator - ERROR - Error generating response: This model has multiple chat templates with no default specified! Please either pass a chat template or the name of the template you wish to use to the `chat_template` argument. Available template names are ['context', 'prompt', 'response'].
+2025-01-30 18:47:35,048 - src.models.response_generator - INFO - Model initialized successfully!
+2025-01-30 18:47:50,327 - src.models.response_generator - ERROR - Error generating response: This model has multiple chat templates with no default specified! Please either pass a chat template or the name of the template you wish to use to the `chat_template` argument. Available template names are ['context', 'prompt', 'response'].
+2025-01-30 18:48:01,409 - src.models.response_generator - ERROR - Error generating response: This model has multiple chat templates with no default specified! Please either pass a chat template or the name of the template you wish to use to the `chat_template` argument. Available template names are ['context', 'prompt', 'response'].
+2025-01-30 18:54:52,958 - src.models.response_generator - INFO - Model initialized successfully!
+2025-01-30 18:55:08,714 - src.models.response_generator - ERROR - Error generating response: 'Collection' object has no attribute 'similarity_search'
+2025-01-30 18:55:21,520 - src.models.response_generator - ERROR - Error generating response: 'Collection' object has no attribute 'similarity_search'
+2025-01-30 19:02:58,914 - src.models.response_generator - INFO - Model initialized successfully!
+2025-01-30 19:06:19,970 - src.models.response_generator - INFO - Model initialized successfully!
+2025-01-30 19:13:27,034 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 16:28:40,586 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 16:38:04,632 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 17:01:28,931 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 17:07:54,257 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 17:51:25,939 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 17:53:39,438 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 18:00:39,266 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 20:15:22,555 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 20:19:56,659 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 20:25:36,699 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 23:02:20,174 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 23:02:28,033 - src.models.response_generator - INFO - Generating response for input: hi
+2025-02-01 23:09:43,427 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 23:09:49,601 - src.models.response_generator - INFO - Generating response for input: hi
+2025-02-01 23:12:55,860 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 23:13:20,182 - src.models.response_generator - INFO - Generating response for input: hi
+2025-02-01 23:16:52,784 - src.models.response_generator - INFO - Generating response for input: IM VERY MAD I CANT PAY STOP CONTACTING ME
+2025-02-01 23:20:49,675 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-01 23:20:53,833 - src.models.response_generator - INFO - Generating response for input: hi
+2025-02-01 23:29:07,979 - src.models.response_generator - INFO - Generating response for input: I NEED MORE TIME I CANT PAY NOW IM EATING A SANDWICH
+2025-02-01 23:39:41,975 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-02 00:32:43,384 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-02 00:40:13,356 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-07 19:50:45,487 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-07 19:54:17,509 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-07 20:37:00,583 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-07 20:37:12,415 - src.models.response_generator - ERROR - Error generating response: 'SentimentAnalyzer' object has no attribute 'analyze_sentiment'
+2025-02-07 20:37:22,632 - src.models.response_generator - ERROR - Error generating response: 'SentimentAnalyzer' object has no attribute 'analyze_sentiment'
+2025-02-07 20:37:26,697 - src.models.response_generator - ERROR - Error generating response: 'SentimentAnalyzer' object has no attribute 'analyze_sentiment'
+2025-02-07 20:43:40,658 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-07 20:44:48,741 - src.models.response_generator - ERROR - Error generating response: 'SentimentAnalyzer' object has no attribute 'analyze_sentiment'
+2025-02-07 21:02:47,860 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-07 21:02:50,391 - src.models.response_generator - ERROR - Error generating response: 'SentimentAnalyzer' object has no attribute 'analyze_sentiment'
+2025-02-07 22:25:55,919 - src.models.response_generator - INFO - Model initialized successfully!
+2025-02-07 22:26:14,407 - src.models.response_generator - ERROR - Error generating response: 'SentimentAnalyzer' object has no attribute 'analyze_sentiment'
+2025-02-07 22:26:18,907 - src.models.response_generator - ERROR - Error generating response: 'SentimentAnalyzer' object has no attribute 'analyze_sentiment'
+2025-02-07 22:26:25,276 - src.models.response_generator - ERROR - Error generating response: 'SentimentAnalyzer' object has no attribute 'analyze_sentiment'
+2025-02-07 22:42:58,515 - src.models.response_generator - INFO - Model initialized successfully!
