@@ -1,0 +1,2 @@
+venv/fine_tuned_phi2_model/adapter_model.safetensors filter=lfs diff=lfs merge=lfs -text
+venv/results/checkpoint-30/optimizer.pt filter=lfs diff=lfs merge=lfs -text
