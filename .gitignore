@@ -1,0 +1,3 @@
+# Ignore the 'adapter_model.safetensors' and 'optimizer.pt' files
+venv/results/checkpoint-30/adapter_model.safetensors
+venv/results/checkpoint-30/optimizer.pt
