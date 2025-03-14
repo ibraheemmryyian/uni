@@ -1,40 +1,37 @@
 import logging
-from pathlib import Path
+import os
+from logging.handlers import RotatingFileHandler
 
-def setup_logger(name: str, log_file: str, level: str = "INFO") -> logging.Logger:
-    """
-    Set up a logger that logs messages to a file and console.
+def setup_logger(name: str, log_file: str, level=logging.INFO) -> logging.Logger:
+    """Set up logger with file and console handlers"""
     
-    :param name: Name of the logger (usually set to __name__).
-    :param log_file: Path to the log file.
-    :param level: Logging level (e.g., 'INFO', 'DEBUG', 'ERROR').
-    :return: Logger instance.
-    """
     # Create logs directory if it doesn't exist
-    log_dir = Path(log_file).parent
-    log_dir.mkdir(parents=True, exist_ok=True)
-
-    # Create a logger
-    logger = logging.getLogger(name)
-    logger.setLevel(getattr(logging, level))
-
-    # Create a file handler for logging to file
-    file_handler = logging.FileHandler(log_file, encoding='utf-8')
-    file_handler.setLevel(getattr(logging, level))
-
-    # Create a console handler for logging to console
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(getattr(logging, level))
-
-    # Create a formatter
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    os.makedirs(os.path.dirname(log_file), exist_ok=True)
     
-    # Set formatter for both handlers
-    file_handler.setFormatter(formatter)
-    console_handler.setFormatter(formatter)
-
+    # Create logger
+    logger = logging.getLogger(name)
+    
+    # Set level directly using the level parameter
+    logger.setLevel(level)
+    
+    # Create handlers
+    file_handler = RotatingFileHandler(
+        log_file,
+        maxBytes=1024 * 1024,  # 1MB
+        backupCount=3
+    )
+    console_handler = logging.StreamHandler()
+    
+    # Create formatters and add it to handlers
+    log_format = logging.Formatter(
+        '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S,%f'
+    )
+    file_handler.setFormatter(log_format)
+    console_handler.setFormatter(log_format)
+    
     # Add handlers to the logger
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
-
+    
     return logger
