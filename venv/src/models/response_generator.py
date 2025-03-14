@@ -34,8 +34,9 @@ class ResponseGenerator:
         self.faq_db = faq_database
         self.sentiment_analyzer = SentimentAnalyzer()
         
-        # Create logs directory if it doesn't exist
+        # Create necessary directories
         os.makedirs("logs", exist_ok=True)
+        os.makedirs("models", exist_ok=True)
         
         self.logger = setup_logger(__name__, "logs/response_generator.log", level=logging.INFO)
         
@@ -48,16 +49,10 @@ class ResponseGenerator:
         
         try:
             # Define model path - use environment variable or fallback to a default path
-            model_path = os.getenv('FINE_TUNED_MODEL_PATH', './models/fine_tuned_phi2_model')
+            model_path = os.getenv('FINE_TUNED_MODEL_PATH', os.path.join(os.getcwd(), 'models', 'fine_tuned_phi2_model'))
             
             if not os.path.exists(model_path):
-                self.logger.warning(f"Fine-tuned model not found at {model_path}, creating directory...")
-                os.makedirs(os.path.dirname(model_path), exist_ok=True)
-                
-                # If fine-tuned model doesn't exist, we need to either:
-                # 1. Download it from a storage location, or
-                # 2. Fall back to base model temporarily
-                self.logger.info("Falling back to base Phi-2 model temporarily...")
+                self.logger.warning(f"Fine-tuned model not found at {model_path}, using base model...")
                 model_path = "microsoft/phi-2"
             
             print(f"Loading tokenizer from {model_path}...")
