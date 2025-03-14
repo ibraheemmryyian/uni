@@ -22,15 +22,23 @@ gc.collect()
 print("Initializing components...")
 try:
     print("Loading model configuration...")
-    config = AutoConfig.from_pretrained(
-        "fine_tuned_phi2_model",
-        trust_remote_code=True
-    )
+    model_path = os.getenv('FINE_TUNED_MODEL_PATH', './models/fine_tuned_phi2_model')
+    
+    if os.path.exists(model_path):
+        print(f"Using fine-tuned model from {model_path}")
+        config = AutoConfig.from_pretrained(
+            model_path,
+            trust_remote_code=True
+        )
+    else:
+        print("Fine-tuned model not found, using base model temporarily")
+        config = AutoConfig.from_pretrained(
+            "microsoft/phi-2",
+            trust_remote_code=True
+        )
 
     print("Initializing components for CPU...")
     faq_db = FAQDatabase()
-    
-    # Initialize ResponseGenerator without model_kwargs
     response_generator = ResponseGenerator(faq_database=faq_db)
     
     print("Components initialized successfully!")
