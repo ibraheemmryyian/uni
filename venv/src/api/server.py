@@ -22,7 +22,7 @@ gc.collect()
 print("Initializing components...")
 try:
     print("Loading model configuration...")
-    model_path = os.getenv('FINE_TUNED_MODEL_PATH', './models/fine_tuned_phi2_model')
+    model_path = os.getenv('FINE_TUNED_MODEL_PATH', 'venv/fine_tuned_phi2_model')
     
     if os.path.exists(model_path):
         print(f"Using fine-tuned model from {model_path}")
