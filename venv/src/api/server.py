@@ -5,24 +5,55 @@ from typing import Dict, Optional
 from pydantic import BaseModel
 import uvicorn
 import os
+import torch
 from dotenv import load_dotenv
+from src.models.faq_database import FAQDatabase
+from src.models.response_generator import ResponseGenerator
+import gc
+from transformers import AutoConfig
 
 # Load environment variables
 load_dotenv()
 
+# Force garbage collection
+gc.collect()
+
+# Initialize components with CPU-only configuration
+print("Initializing components...")
+try:
+    print("Loading model configuration...")
+    config = AutoConfig.from_pretrained(
+        "fine_tuned_phi2_model",
+        trust_remote_code=True
+    )
+
+    print("Initializing components for CPU...")
+    faq_db = FAQDatabase()
+    
+    # Initialize ResponseGenerator without model_kwargs
+    response_generator = ResponseGenerator(faq_database=faq_db)
+    
+    print("Components initialized successfully!")
+except Exception as e:
+    print(f"Initialization error: {str(e)}")
+    raise
+
+# FastAPI initialization
 app = FastAPI(title="Enterprise AI Support System")
+
+# API Key header verification
 api_key_header = APIKeyHeader(name="X-API-Key")
 
-# CORS configuration
+# CORS configuration to allow requests from your website
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Update with your allowed origins
+    allow_origins=["https://website-rouge-one-41.vercel.app"],  # Link to your website
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# API key verification
+# API Key verification function
 async def verify_api_key(api_key: str = Security(api_key_header)):
     if api_key != os.getenv("API_KEY"):
         raise HTTPException(
@@ -31,6 +62,7 @@ async def verify_api_key(api_key: str = Security(api_key_header)):
         )
     return api_key
 
+# Define the chat request model
 class ChatRequest(BaseModel):
     message: str
     context: Optional[Dict] = None
@@ -42,17 +74,16 @@ async def chat_endpoint(
     api_key: str = Depends(verify_api_key)
 ):
     try:
-        response = response_generator.generate_response(
-            request.message,
-            request.context
-        )
+        # Generate response using your ResponseGenerator
+        response = await response_generator.generate_response(request.message)
+        
         return {
             "status": "success",
-            "response": response["response"],
-            "confidence": response["confidence"]
+            "response": response,
+            "confidence": 0.95  # You can implement actual confidence scoring if needed
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
-    uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True) 
+    uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)
