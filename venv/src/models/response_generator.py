@@ -26,27 +26,28 @@ class ConversationState:
         self.dispute_mentioned = False
         self.aggression_level = 0
         self.last_sentiment = 0
-        
+
 class ResponseGenerator:
     def __init__(self, faq_database: FAQDatabase):
+        """Initialize the ResponseGenerator with CPU configuration"""
         self.faq_db = faq_database
         self.sentiment_analyzer = SentimentAnalyzer()
         self.logger = setup_logger(__name__, "logs/response_generator.log", level=logging.INFO)
         
-        # Initialize models with CPU-specific settings
         print("Loading tokenizer...")
         self.tokenizer = AutoTokenizer.from_pretrained(
             "fine_tuned_phi2_model",
             use_fast=True,
-            model_max_length=512
+            model_max_length=512,
+            trust_remote_code=True
         )
         
         print("Loading main model...")
         self.model = AutoModelForCausalLM.from_pretrained(
             "fine_tuned_phi2_model",
             low_cpu_mem_usage=True,
-            torch_dtype=torch.float32,  # Use float32 for CPU
-            device_map=None  # Force CPU
+            torch_dtype=torch.float32,
+            trust_remote_code=True
         )
         
         # Ensure pad token is set
@@ -69,8 +70,8 @@ class ResponseGenerator:
         # Enhanced support resources
         self.support_resources = {
             "financial": [
-                "National Financial Counseling: 1-800-555-HELP",
-                "Consumer Credit Assistance: www.credithelp.org"
+            "National Financial Counseling: 1-800-555-HELP",
+            "Consumer Credit Assistance: www.credithelp.org"
             ],
             "emotional": [
                 "Mental Health Support: 1-800-273-8255",
@@ -1663,4 +1664,4 @@ class ResponseGenerator:
         }
         return responses.get(hardship_type, self._get_default_response(query))
 
-
+# Usage example remains unchanged
