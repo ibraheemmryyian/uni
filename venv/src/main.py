@@ -1,11 +1,16 @@
 import asyncio
 import logging
+import os
 from src.models.faq_database import FAQDatabase
 from src.models.response_generator import ResponseGenerator
 from src.faq_data import faq_data
 from src.logger import setup_logger
 
 async def chatbot_main():
+    # Create necessary directories
+    os.makedirs("logs", exist_ok=True)
+    os.makedirs("models", exist_ok=True)
+    
     logger = setup_logger(__name__, "logs/app.log", level=logging.ERROR)
     
     try:
@@ -17,6 +22,9 @@ async def chatbot_main():
         # Initialize Response Generator with proper error handling
         print("Initializing Response Generator...")
         try:
+            # Set environment variable for model path - using the correct path
+            os.environ['FINE_TUNED_MODEL_PATH'] = 'venv/fine_tuned_phi2_model'
+            
             response_gen = ResponseGenerator(faq_database=faq_db)
         except Exception as e:
             logger.error(f"Failed to initialize Response Generator: {str(e)}")
