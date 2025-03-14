@@ -10,6 +10,7 @@ from src.utils.sentiment_analyzer import SentimentAnalyzer
 from src.utils.text_processing import normalize_query, is_greeting
 from .faq_database import FAQDatabase
 from src.models.prompt.prompt_builder import PromptBuilder
+import os
 
 class TokenLengthError(Exception):
     """Custom exception for token length issues"""
@@ -32,6 +33,10 @@ class ResponseGenerator:
         """Initialize the ResponseGenerator with CPU configuration"""
         self.faq_db = faq_database
         self.sentiment_analyzer = SentimentAnalyzer()
+        
+        # Create logs directory if it doesn't exist
+        os.makedirs("logs", exist_ok=True)
+        
         self.logger = setup_logger(__name__, "logs/response_generator.log", level=logging.INFO)
         
         # Initialize conversation tracking before model loading
@@ -42,17 +47,30 @@ class ResponseGenerator:
         self.device = torch.device("cpu")
         
         try:
-            print("Loading tokenizer...")
+            # Define model path - use environment variable or fallback to a default path
+            model_path = os.getenv('FINE_TUNED_MODEL_PATH', './models/fine_tuned_phi2_model')
+            
+            if not os.path.exists(model_path):
+                self.logger.warning(f"Fine-tuned model not found at {model_path}, creating directory...")
+                os.makedirs(os.path.dirname(model_path), exist_ok=True)
+                
+                # If fine-tuned model doesn't exist, we need to either:
+                # 1. Download it from a storage location, or
+                # 2. Fall back to base model temporarily
+                self.logger.info("Falling back to base Phi-2 model temporarily...")
+                model_path = "microsoft/phi-2"
+            
+            print(f"Loading tokenizer from {model_path}...")
             self.tokenizer = AutoTokenizer.from_pretrained(
-                "fine_tuned_phi2_model",
+                model_path,
                 use_fast=True,
                 model_max_length=512,
                 trust_remote_code=True
             )
             
-            print("Loading main model...")
+            print(f"Loading main model from {model_path}...")
             self.model = AutoModelForCausalLM.from_pretrained(
-                "fine_tuned_phi2_model",
+                model_path,
                 low_cpu_mem_usage=True,
                 torch_dtype=torch.float32,
                 trust_remote_code=True
@@ -75,50 +93,54 @@ class ResponseGenerator:
                 torch_dtype=torch.float32
             )
             
-            # Initialize configurations
-            self.support_resources = {
-                "financial": [
-                    "National Financial Counseling: 1-800-555-HELP",
-                    "Consumer Credit Assistance: www.credithelp.org"
-                ],
-                "emotional": [
-                    "Mental Health Support: 1-800-273-8255",
-                    "Stress Management Hotline: 1-800-784-2433"
-                ]
-            }
-
-            self.intent_keywords = {
-                "payment_plan": ["payment plan", "installment", "pay later", "extend payment"],
-                "help": ["help", "support", "assistance", "guidance"],
-                "complaint": ["problem", "issue", "can't pay", "struggling"],
-                "information": ["tell me", "explain", "what is", "how do"]
-            }
-
-            # Initialize PromptBuilder
-            self.prompt_builder = PromptBuilder()
-            
-            # Optimize for CPU
-            self.model.eval()
-            torch.set_num_threads(4)
-            
-            # Configuration settings
-            self.batch_size = 1
-            self.max_length = 1024
-            self.memory_config = {
-                'max_tokens_per_response': 1000,
-                'history_token_limit': 2048,
-                'context_window_size': 4096
-            }
-            
-            # Response caching
-            self.response_cache = {}
-            self.cache_ttl = 3600  # 1 hour cache lifetime
+            # Initialize other configurations...
+            self._initialize_configurations()
             
             print("Models loaded successfully!")
             
         except Exception as e:
             self.logger.error(f"Model initialization failed: {str(e)}")
             raise
+
+    def _initialize_configurations(self):
+        """Initialize all configurations"""
+        self.support_resources = {
+            "financial": [
+                "National Financial Counseling: 1-800-555-HELP",
+                "Consumer Credit Assistance: www.credithelp.org"
+            ],
+            "emotional": [
+                "Mental Health Support: 1-800-273-8255",
+                "Stress Management Hotline: 1-800-784-2433"
+            ]
+        }
+
+        self.intent_keywords = {
+            "payment_plan": ["payment plan", "installment", "pay later", "extend payment"],
+            "help": ["help", "support", "assistance", "guidance"],
+            "complaint": ["problem", "issue", "can't pay", "struggling"],
+            "information": ["tell me", "explain", "what is", "how do"]
+        }
+
+        # Initialize PromptBuilder
+        self.prompt_builder = PromptBuilder()
+        
+        # Optimize for CPU
+        self.model.eval()
+        torch.set_num_threads(4)
+        
+        # Configuration settings
+        self.batch_size = 1
+        self.max_length = 1024
+        self.memory_config = {
+            'max_tokens_per_response': 1000,
+            'history_token_limit': 2048,
+            'context_window_size': 4096
+        }
+        
+        # Response caching
+        self.response_cache = {}
+        self.cache_ttl = 3600  # 1 hour cache lifetime
 
     async def generate_response(self, user_input: str) -> str:
         """Advanced response generation pipeline"""
