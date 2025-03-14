@@ -34,98 +34,91 @@ class ResponseGenerator:
         self.sentiment_analyzer = SentimentAnalyzer()
         self.logger = setup_logger(__name__, "logs/response_generator.log", level=logging.INFO)
         
-        print("Loading tokenizer...")
-        self.tokenizer = AutoTokenizer.from_pretrained(
-            "fine_tuned_phi2_model",
-            use_fast=True,
-            model_max_length=512,
-            trust_remote_code=True
-        )
-        
-        print("Loading main model...")
-        self.model = AutoModelForCausalLM.from_pretrained(
-            "fine_tuned_phi2_model",
-            low_cpu_mem_usage=True,
-            torch_dtype=torch.float32,
-            trust_remote_code=True
-        )
-        
-        # Ensure pad token is set
-        if self.tokenizer.pad_token is None:
-            self.tokenizer.pad_token = self.tokenizer.eos_token
-
-        print("Loading paraphrase model...")
-        # Load smaller T5 model for paraphrasing
-        self.paraphrase_tokenizer = T5Tokenizer.from_pretrained(
-            't5-small',
-            legacy=False,
-            model_max_length=512
-        )
-        self.paraphrase_model = T5ForConditionalGeneration.from_pretrained(
-            't5-small',
-            low_cpu_mem_usage=True,
-            torch_dtype=torch.float32
-        )
-
-        # Enhanced support resources
-        self.support_resources = {
-            "financial": [
-            "National Financial Counseling: 1-800-555-HELP",
-            "Consumer Credit Assistance: www.credithelp.org"
-            ],
-            "emotional": [
-                "Mental Health Support: 1-800-273-8255",
-                "Stress Management Hotline: 1-800-784-2433"
-            ]
-        }
-
-        # Advanced intent keywords
-        self.intent_keywords = {
-            "payment_plan": ["payment plan", "installment", "pay later", "extend payment"],
-            "help": ["help", "support", "assistance", "guidance"],
-            "complaint": ["problem", "issue", "can't pay", "struggling"],
-            "information": ["tell me", "explain", "what is", "how do"]
-        }
-
-        # Initialize PromptBuilder
-        self.prompt_builder = PromptBuilder()
-        
-        # Add conversation context tracking
+        # Initialize conversation tracking before model loading
         self.conversation_history = []
         self.max_history_length = 5
         self.context_window = 1000
-
-        # Remove GPU-specific code
+        self.conversation_state = ConversationState()
         self.device = torch.device("cpu")
         
-        # Optimize for CPU
-        self.model.eval()  # Set model to evaluation mode
-        torch.set_num_threads(4)  # Adjust based on your CPU cores
-        
-        # Remove GPU-specific optimizations
-        # self.model = torch.jit.script(self.model)  # Remove this line
-        
-        print("Models loaded successfully!")
+        try:
+            print("Loading tokenizer...")
+            self.tokenizer = AutoTokenizer.from_pretrained(
+                "fine_tuned_phi2_model",
+                use_fast=True,
+                model_max_length=512,
+                trust_remote_code=True
+            )
+            
+            print("Loading main model...")
+            self.model = AutoModelForCausalLM.from_pretrained(
+                "fine_tuned_phi2_model",
+                low_cpu_mem_usage=True,
+                torch_dtype=torch.float32,
+                trust_remote_code=True
+            )
+            
+            # Ensure pad token is set
+            if self.tokenizer.pad_token is None:
+                self.tokenizer.pad_token = self.tokenizer.eos_token
 
-        # Add memory management
-        torch.cuda.empty_cache()  # Clear GPU cache
-        
-        # Add batch processing capability
-        self.batch_size = 1
-        self.max_length = 1024
+            print("Loading paraphrase model...")
+            # Load smaller T5 model for paraphrasing
+            self.paraphrase_tokenizer = T5Tokenizer.from_pretrained(
+                't5-small',
+                legacy=False,
+                model_max_length=512
+            )
+            self.paraphrase_model = T5ForConditionalGeneration.from_pretrained(
+                't5-small',
+                low_cpu_mem_usage=True,
+                torch_dtype=torch.float32
+            )
+            
+            # Initialize configurations
+            self.support_resources = {
+                "financial": [
+                    "National Financial Counseling: 1-800-555-HELP",
+                    "Consumer Credit Assistance: www.credithelp.org"
+                ],
+                "emotional": [
+                    "Mental Health Support: 1-800-273-8255",
+                    "Stress Management Hotline: 1-800-784-2433"
+                ]
+            }
 
-        self.conversation_state = ConversationState()
+            self.intent_keywords = {
+                "payment_plan": ["payment plan", "installment", "pay later", "extend payment"],
+                "help": ["help", "support", "assistance", "guidance"],
+                "complaint": ["problem", "issue", "can't pay", "struggling"],
+                "information": ["tell me", "explain", "what is", "how do"]
+            }
 
-        # Add advanced memory management
-        self.memory_config = {
-            'max_tokens_per_response': 1000,
-            'history_token_limit': 2048,
-            'context_window_size': 4096
-        }
-        
-        # Add response caching
-        self.response_cache = {}
-        self.cache_ttl = 3600  # 1 hour cache lifetime
+            # Initialize PromptBuilder
+            self.prompt_builder = PromptBuilder()
+            
+            # Optimize for CPU
+            self.model.eval()
+            torch.set_num_threads(4)
+            
+            # Configuration settings
+            self.batch_size = 1
+            self.max_length = 1024
+            self.memory_config = {
+                'max_tokens_per_response': 1000,
+                'history_token_limit': 2048,
+                'context_window_size': 4096
+            }
+            
+            # Response caching
+            self.response_cache = {}
+            self.cache_ttl = 3600  # 1 hour cache lifetime
+            
+            print("Models loaded successfully!")
+            
+        except Exception as e:
+            self.logger.error(f"Model initialization failed: {str(e)}")
+            raise
 
     async def generate_response(self, user_input: str) -> str:
         """Advanced response generation pipeline"""
