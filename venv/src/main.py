@@ -15,7 +15,9 @@ async def chatbot_main():
     
     try:
         # Set environment variable for model path
-        os.environ['FINE_TUNED_MODEL_PATH'] = '/content/uni/venv/fine_tuned_phi2_model/'
+        model_path = '/content/uni/venv/fine_tuned_phi2_model/'
+        os.environ['FINE_TUNED_MODEL_PATH'] = model_path
+        print(f"Model path set in main.py: {os.environ['FINE_TUNED_MODEL_PATH']}")
         
         # Initialize FAQ database
         print("Initializing FAQ database...")
