@@ -57,6 +57,8 @@ class ResponseGenerator:
                 model_path = "microsoft/phi-2"  # Fallback to base model
             else:
                 print(f"Model found at {model_path}")  # Debugging line
+                # List contents of model directory
+                print(f"Contents of model directory: {os.listdir(model_path)}")
             
             print(f"Loading tokenizer from {model_path}...")
             try:
@@ -66,8 +68,10 @@ class ResponseGenerator:
                     print(f"Tokenizer config not found at {tokenizer_config_path}")
                     raise FileNotFoundError(f"Tokenizer config not found at {tokenizer_config_path}")
 
+                # Use absolute path
+                abs_model_path = os.path.abspath(model_path)
                 self.tokenizer = AutoTokenizer.from_pretrained(
-                    model_path,
+                    abs_model_path,
                     use_fast=True,
                     model_max_length=512,
                     trust_remote_code=True
@@ -85,8 +89,10 @@ class ResponseGenerator:
                     print(f"Model config not found at {model_config_path}")
                     raise FileNotFoundError(f"Model config not found at {model_config_path}")
 
+                # Use absolute path
+                abs_model_path = os.path.abspath(model_path)
                 self.model = AutoModelForCausalLM.from_pretrained(
-                    model_path,
+                    abs_model_path,
                     low_cpu_mem_usage=True,
                     torch_dtype=torch.float32,
                     trust_remote_code=True
