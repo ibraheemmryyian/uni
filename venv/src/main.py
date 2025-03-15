@@ -9,47 +9,38 @@ from src.logger import setup_logger
 async def chatbot_main():
     # Create necessary directories
     os.makedirs("logs", exist_ok=True)
-    os.makedirs("fine_tuned_phi2_model", exist_ok=True)  # Adjust this if needed
     
     logger = setup_logger(__name__, "logs/app.log", level=logging.ERROR)
     
     try:
-        # Set environment variable for model path
-        model_path = '/content/uni/venv/fine_tuned_phi2_model/'
-        os.environ['FINE_TUNED_MODEL_PATH'] = model_path
-        print(f"Model path set in main.py: {os.environ['FINE_TUNED_MODEL_PATH']}")
-        
         # Initialize FAQ database
-        print("Initializing FAQ database...")
+        print("🔄 Initializing FAQ database...")
         faq_db = FAQDatabase()
         faq_db.setup(faq_data)
         
-        # Initialize Response Generator with proper error handling
-        print("Initializing ResponseGenerator...")
-        try:
-            response_gen = ResponseGenerator(faq_database=faq_db)
-        except Exception as e:
-            logger.error(f"Failed to initialize Response Generator: {str(e)}")
-            raise
+        # Initialize Response Generator
+        print("🚀 Initializing ResponseGenerator...")
+        response_gen = ResponseGenerator(faq_database=faq_db)
         
-        print("System initialized successfully!")
-        
+        print("✅ System initialized successfully!\n")
+        print("Type 'exit' to end the conversation\n" + "-"*50)
+
         while True:
-            user_input = input("\nCustomer: ").strip()
-            if user_input.lower() in ["exit", "quit"]:
-                break
-                
             try:
+                user_input = input("\nCustomer: ").strip()
+                if user_input.lower() in ["exit", "quit"]:
+                    break
+                
                 response = await response_gen.generate_response(user_input)
                 print(f"\nSupport: {response}")
-            except Exception as e:
-                logger.error(f"Response generation error: {str(e)}")
-                print("\nSupport: I apologize, but I'm having trouble processing your request. Please try again.")
+                
+            except KeyboardInterrupt:
+                print("\n🚫 Conversation ended by user")
+                break
 
     except Exception as e:
         logger.error(f"Critical failure: {str(e)}")
-        print("System unavailable. Please try again later.")
-        return
+        print("\n❌ System unavailable. Please try again later.")
 
 def main():
     asyncio.run(chatbot_main())
