@@ -49,11 +49,14 @@ class ResponseGenerator:
         
         try:
             # Define model path - use environment variable or fallback to a default path
-            model_path = os.getenv('FINE_TUNED_MODEL_PATH', os.path.join(os.getcwd(), 'models', 'fine_tuned_phi2_model'))
+            model_path = os.getenv('FINE_TUNED_MODEL_PATH', 'fine_tuned_phi2_model/')
+            print(f"Model path from env: {model_path}")  # Debugging line
             
             if not os.path.exists(model_path):
-                self.logger.warning(f"Fine-tuned model not found at {model_path}, using base model...")
-                model_path = "microsoft/phi-2"
+                print(f"Model not found at {model_path}")  # Debugging line
+                model_path = "microsoft/phi-2"  # Fallback to base model
+            else:
+                print(f"Model found at {model_path}")  # Debugging line
             
             print(f"Loading tokenizer from {model_path}...")
             self.tokenizer = AutoTokenizer.from_pretrained(
@@ -94,15 +97,15 @@ class ResponseGenerator:
             print("Models loaded successfully!")
             
         except Exception as e:
-            self.logger.error(f"Model initialization failed: {str(e)}")
+            print(f"Model initialization failed: {str(e)}")
             raise
 
     def _initialize_configurations(self):
         """Initialize all configurations"""
         self.support_resources = {
             "financial": [
-                "National Financial Counseling: 1-800-555-HELP",
-                "Consumer Credit Assistance: www.credithelp.org"
+            "National Financial Counseling: 1-800-555-HELP",
+            "Consumer Credit Assistance: www.credithelp.org"
             ],
             "emotional": [
                 "Mental Health Support: 1-800-273-8255",
