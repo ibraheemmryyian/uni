@@ -9,11 +9,14 @@ from src.logger import setup_logger
 async def chatbot_main():
     # Create necessary directories
     os.makedirs("logs", exist_ok=True)
-    os.makedirs("models", exist_ok=True)
+    os.makedirs("fine_tuned_phi2_model", exist_ok=True)  # Adjust this if needed
     
     logger = setup_logger(__name__, "logs/app.log", level=logging.ERROR)
     
     try:
+        # Set environment variable for model path
+        os.environ['FINE_TUNED_MODEL_PATH'] = '/content/uni/venv/fine_tuned_phi2_model/'
+        
         # Initialize FAQ database
         print("Initializing FAQ database...")
         faq_db = FAQDatabase()
@@ -22,9 +25,6 @@ async def chatbot_main():
         # Initialize Response Generator with proper error handling
         print("Initializing ResponseGenerator...")
         try:
-            # Set environment variable for model path - using the correct path
-            os.environ['FINE_TUNED_MODEL_PATH'] = 'venv/fine_tuned_phi2_model'
-            
             response_gen = ResponseGenerator(faq_database=faq_db)
         except Exception as e:
             logger.error(f"Failed to initialize Response Generator: {str(e)}")
