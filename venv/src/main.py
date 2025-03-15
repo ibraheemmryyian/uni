@@ -20,7 +20,7 @@ async def chatbot_main():
         faq_db.setup(faq_data)
         
         # Initialize Response Generator with proper error handling
-        print("Initializing Response_Generator...")
+        print("Initializing ResponseGenerator...")
         try:
             # Set environment variable for model path - using the correct path
             os.environ['FINE_TUNED_MODEL_PATH'] = 'venv/fine_tuned_phi2_model'
