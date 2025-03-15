@@ -49,7 +49,7 @@ class ResponseGenerator:
         
         try:
             # Define model path - use environment variable or fallback to a default path
-            model_path = os.getenv('FINE_TUNED_MODEL_PATH', 'fine_tuned_phi2_model/')
+            model_path = os.getenv('FINE_TUNED_MODEL_PATH', '/content/uni/venv/fine_tuned_phi2_model/')
             print(f"Model path from env: {model_path}")  # Debugging line
             
             if not os.path.exists(model_path):
