@@ -50,7 +50,7 @@ class ResponseGenerator:
         try:
             # Define model path - use environment variable or fallback to a default path
             model_path = os.getenv('FINE_TUNED_MODEL_PATH', '/content/uni/venv/fine_tuned_phi2_model/')
-            print(f"Model path from env: {model_path}")  # Debugging line
+            print(f"Model path from env in ResponseGenerator: {model_path}")  # Debugging line
             
             if not os.path.exists(model_path):
                 print(f"Model not found at {model_path}")  # Debugging line
@@ -59,20 +59,30 @@ class ResponseGenerator:
                 print(f"Model found at {model_path}")  # Debugging line
             
             print(f"Loading tokenizer from {model_path}...")
-            self.tokenizer = AutoTokenizer.from_pretrained(
-                model_path,
-                use_fast=True,
-                model_max_length=512,
-                trust_remote_code=True
-            )
-            
+            try:
+                self.tokenizer = AutoTokenizer.from_pretrained(
+                    model_path,
+                    use_fast=True,
+                    model_max_length=512,
+                    trust_remote_code=True
+                )
+                print("Tokenizer loaded successfully.")
+            except Exception as e:
+                print(f"Error loading tokenizer: {str(e)}")
+                raise
+
             print(f"Loading main model from {model_path}...")
-            self.model = AutoModelForCausalLM.from_pretrained(
-                model_path,
-                low_cpu_mem_usage=True,
-                torch_dtype=torch.float32,
-                trust_remote_code=True
-            )
+            try:
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    model_path,
+                    low_cpu_mem_usage=True,
+                    torch_dtype=torch.float32,
+                    trust_remote_code=True
+                )
+                print("Main model loaded successfully!")
+            except Exception as e:
+                print(f"Error loading main model: {str(e)}")
+                raise
             
             # Ensure pad token is set
             if self.tokenizer.pad_token is None:
