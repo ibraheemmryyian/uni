@@ -60,6 +60,12 @@ class ResponseGenerator:
             
             print(f"Loading tokenizer from {model_path}...")
             try:
+                # Check if tokenizer files exist
+                tokenizer_config_path = os.path.join(model_path, 'tokenizer_config.json')
+                if not os.path.exists(tokenizer_config_path):
+                    print(f"Tokenizer config not found at {tokenizer_config_path}")
+                    raise FileNotFoundError(f"Tokenizer config not found at {tokenizer_config_path}")
+
                 self.tokenizer = AutoTokenizer.from_pretrained(
                     model_path,
                     use_fast=True,
@@ -73,6 +79,12 @@ class ResponseGenerator:
 
             print(f"Loading main model from {model_path}...")
             try:
+                # Check if model files exist
+                model_config_path = os.path.join(model_path, 'config.json')
+                if not os.path.exists(model_config_path):
+                    print(f"Model config not found at {model_config_path}")
+                    raise FileNotFoundError(f"Model config not found at {model_config_path}")
+
                 self.model = AutoModelForCausalLM.from_pretrained(
                     model_path,
                     low_cpu_mem_usage=True,
